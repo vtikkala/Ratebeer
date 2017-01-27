@@ -2656,3 +2656,88 @@ Migrating to CreateRatings (20170127144400)
   [1m[35m (0.1ms)[0m  begin transaction
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["score", 17], ["beer_id", 1], ["created_at", "2017-01-27 14:47:55.991004"], ["updated_at", "2017-01-27 14:47:55.991004"]]
   [1m[35m (14.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "breweries" ("name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "BrewDog"], ["year", 2007], ["created_at", "2017-01-27 15:05:30.539460"], ["updated_at", "2017-01-27 15:05:30.539460"]]
+  [1m[36m (419.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mBeer Load (0.2ms)[0m  SELECT  "beers".* FROM "beers"  ORDER BY "beers"."id" DESC LIMIT 1
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT  "breweries".* FROM "breweries"  ORDER BY "breweries"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "beers" ("name", "style", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Punk IPA"], ["style", "IPA"], ["brewery_id", 5], ["created_at", "2017-01-27 15:08:53.476527"], ["updated_at", "2017-01-27 15:08:53.476527"]]
+  [1m[35m (590.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "beers" ("name", "style", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Nanny State"], ["style", "lowalcohol"], ["brewery_id", 5], ["created_at", "2017-01-27 15:09:06.609069"], ["updated_at", "2017-01-27 15:09:06.609069"]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mBeer Load (0.4ms)[0m  SELECT  "beers".* FROM "beers"  ORDER BY "beers"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 3], ["beer_id", 15], ["created_at", "2017-01-27 15:09:48.328684"], ["updated_at", "2017-01-27 15:09:48.328684"]]
+  [1m[36m (23.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["score", 10], ["beer_id", 15], ["created_at", "2017-01-27 15:10:06.294280"], ["updated_at", "2017-01-27 15:10:06.294280"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 15], ["beer_id", 15], ["created_at", "2017-01-27 15:10:12.437306"], ["updated_at", "2017-01-27 15:10:12.437306"]]
+  [1m[36m (10.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mBeer Load (0.5ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."name" = ?  [["name", "Punk IPA"]]
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT  "beers".* FROM "beers"  ORDER BY "beers"."id" DESC LIMIT 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT "ratings".* FROM "ratings" WHERE "ratings"."beer_id" = ?  [["beer_id", 15]]
+  [1m[36mBeer Load (0.1ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."name" = ?[0m  [["name", "Punk"]]
+  [1m[35mBeer Load (0.1ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."name" = ?  [["name", "Punk IPA"]]
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers"[0m
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."id" = ?  [["id", 14]]
+  [1m[36mBeer Load (0.1ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 13]]
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."id" = ?  [["id", 12]]
+  [1m[36mBeer Load (0.4ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 6]]
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers"
+  [1m[36mBrewery Load (0.1ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ?[0m  [["id", 15]]
+  [1m[35mBrewery Load (0.5ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."beer_id" = 15
+  [1m[36mBrewery Load (0.4ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."beer_id" = 15[0m
+  [1m[35mBeer Load (0.2ms)[0m  SELECT  "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36mRating Load (0.2ms)[0m  [1mSELECT "ratings".* FROM "ratings" WHERE "ratings"."beer_id" = ?[0m  [["beer_id", 15]]
+  [1m[35mBeer Load (0.1ms)[0m  SELECT  "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 15], ["beer_id", 14], ["created_at", "2017-01-27 15:20:32.577626"], ["updated_at", "2017-01-27 15:20:32.577626"]]
+  [1m[36m (19.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["score", 10], ["beer_id", 14], ["created_at", "2017-01-27 15:20:43.675899"], ["updated_at", "2017-01-27 15:20:43.675899"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "ratings" ("score", "beer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["score", 5], ["beer_id", 14], ["created_at", "2017-01-27 15:20:48.347985"], ["updated_at", "2017-01-27 15:20:48.347985"]]
+  [1m[36m (10.9ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/ratings" for 127.0.0.1 at 2017-01-27 17:23:46 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RatingsController#index as HTML
+  [1m[35mRating Load (0.2ms)[0m  SELECT "ratings".* FROM "ratings"
+  Rendered ratings/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-cc4442a9058d9d3324f0ca2e6de421007bc76c49c90bb57f97c31ad52d0ece52.css?body=1" for 127.0.0.1 at 2017-01-27 17:23:46 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-01-27 17:23:46 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-01-27 17:23:46 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2017-01-27 17:23:46 +0200
+
+
+Started GET "/assets/breweries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-01-27 17:23:46 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-01-27 17:23:46 +0200
+
+
+Started GET "/assets/beers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-01-27 17:23:46 +0200
+  [1m[35mBrewery Load (0.1ms)[0m  SELECT  "breweries".* FROM "breweries"  ORDER BY "breweries"."id" ASC LIMIT 1
+  [1m[36mBrewery Load (0.1ms)[0m  [1mSELECT  "breweries".* FROM "breweries"  ORDER BY "breweries"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = ?  [["brewery_id", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1mSELECT  "breweries".* FROM "breweries"  ORDER BY "breweries"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = ?  [["brewery_id", 1]]
+  [1m[36mBrewery Load (0.1ms)[0m  [1mSELECT  "breweries".* FROM "breweries"  ORDER BY "breweries"."id" ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = ?  [["brewery_id", 1]]
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT  "breweries".* FROM "breweries"  ORDER BY "breweries"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = ?  [["brewery_id", 1]]
