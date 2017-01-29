@@ -15,4 +15,15 @@ class Beer < ActiveRecord::Base
 		average_rating = rating_sum / number_of_ratings
 		return average_rating
 	end
+
+	def average_rating2
+		rating_sum = 0
+
+		self.ratings.each do |rating|
+			rating_sum = ratings.inject { |sum, rating| sum + rating.score }
+		end
+		puts rating_sum
+
+	end
+
 end
