@@ -2,7 +2,7 @@ class Beer < ActiveRecord::Base
 	belongs_to :brewery
 	has_many :ratings
 
-	def average_rating
+	def average_rating2
 		rating_sum = 0
 		number_of_ratings = 0
 		average_rating = 0.0
@@ -16,14 +16,8 @@ class Beer < ActiveRecord::Base
 		return average_rating
 	end
 
-	def average_rating2
-		rating_sum = 0
-
-		self.ratings.each do |rating|
-			rating_sum = ratings.inject { |sum, rating| sum + rating.score }
-		end
-		puts rating_sum
-
+	def average_rating
+		return self.ratings.average(:score).round(1)
 	end
 
 end

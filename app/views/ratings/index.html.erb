@@ -6,5 +6,6 @@
     <% @beers = Beer.find(rating.beer_id) %>
     <li> <%= @beers.name %> <%= rating.score %> </li>
     <% end %>
-
 </ul>
+
+<%= link_to 'New Rating', ratings_new_path %>

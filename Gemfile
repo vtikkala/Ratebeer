@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 group :development, :test do
   gem 'sqlite3'
   gem 'pry-rails'
+  gem "better_errors"
 end
 
 group :production do
