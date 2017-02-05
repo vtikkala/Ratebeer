@@ -3,10 +3,6 @@ class RatingsController < ApplicationController
     @ratings = Rating.all
   end
 
-  def to_s
-    "tekstiesitys"
-  end
-
   def new
     @rating = Rating.new
     @beers = Beer.all
@@ -17,4 +13,9 @@ class RatingsController < ApplicationController
     redirect_to ratings_path
   end
 
+  def destroy
+    rating = Rating.find(params[:id])
+    rating.delete
+    redirect_to ratings_path
+  end
 end
